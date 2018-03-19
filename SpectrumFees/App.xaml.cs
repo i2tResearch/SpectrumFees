@@ -9,7 +9,7 @@ namespace SpectrumFees
         {
             InitializeComponent();
 
-            MainPage = new SpectrumFeesPage();
+            MainPage = new NavigationPage(new SpectrumFeesPage());
         }
 
         protected override void OnStart()

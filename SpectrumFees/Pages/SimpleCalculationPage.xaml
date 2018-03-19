@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SpectrumFees"
-    x:Class="SpectrumFees.Pages.SpectrumFeesPage"
+    Title="Cálculo simple"
+    x:Class="SpectrumFees.Pages.SimpleCalculationPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
-
+    
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
     </ContentPage.Padding>
-
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Button Text="Cálculo simple" Command="{Binding DoSimpleCalculationCommand}" />
-    </StackLayout>
     
+    <ContentPage.Content>
+
+        <StackLayout BindingContext="{Binding SimpleCalculation}">
+            <Label Text="{Binding Text}" />
+        </StackLayout>
+        
+    </ContentPage.Content>
 </ContentPage>
