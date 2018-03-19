@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace SpectrumFees
+namespace SpectrumFees.Pages
 {
     public partial class SpectrumFeesPage : ContentPage
     {

@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using SpectrumFees.Pages;
 
 namespace SpectrumFees
 {
