@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:infra="clr-namespace:SpectrumFees.Infrastructure"
+    
     x:Class="SpectrumFees.App">
     
     <Application.Resources>
@@ -10,7 +11,7 @@
 
             <!-- Styles -->
             <Style TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="#fefefe" />
+                <Setter Property="BackgroundColor" Value="#ffffff" />
             </Style>
 
             <Style TargetType="Label">
@@ -19,6 +20,12 @@
             
             <!-- Locators -->   
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+
+            <Color x:Key="blueColor">#5fbdf5</Color>
+            <Color x:Key="cyanColor">#c4eaff</Color>
+            <Color x:Key="whiteColor">#ffffff</Color>
+            <Color x:Key="navyColor">#000566</Color>
+            <Color x:Key="greenColor">#39b348</Color>
             
         </ResourceDictionary>
     </Application.Resources>

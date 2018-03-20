@@ -6,12 +6,22 @@
     x:Class="SpectrumFees.Pages.SpectrumFeesPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
+    <!--
+        https://color.adobe.com/Financial-Literacy-color-theme-1278403/ 
+        https://color.adobe.com/save-money-color-theme-10390596/
+        https://color.adobe.com/Fresh-Water-color-theme-7088849/
+    -->
+    
     <ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
+        <OnPlatform x:TypeArguments="Thickness" iOS="13, 25, 13, 13" />
     </ContentPage.Padding>
-
-    <StackLayout VerticalOptions="Start" HorizontalOptions="End">
-        <Button Text="?" Command="{Binding ShowSimpleCalculationDescriptionCommand}" BackgroundColor="Transparent" />
+    
+    <StackLayout VerticalOptions="Start" HorizontalOptions="Fill" BackgroundColor="{StaticResource greenColor}">
+        <StackLayout Orientation="Horizontal" HeightRequest="56">
+            <Label Text="250.000.000" IsEnabled="false" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" TextColor="#ffffff" />
+            <Button Text="?" Command="{Binding ShowSimpleCalculationDescriptionCommand}" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="CenterAndExpand" WidthRequest="48" TextColor="#ffffff" FontSize="Medium" FontAttributes="Bold" />
+        </StackLayout>
+        
     </StackLayout>
     
 </ContentPage>
