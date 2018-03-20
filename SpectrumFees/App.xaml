@@ -7,6 +7,15 @@
     
     <Application.Resources>
         <ResourceDictionary>
+
+            <!-- Styles -->
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#fefefe" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
             
             <!-- Locators -->   
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>

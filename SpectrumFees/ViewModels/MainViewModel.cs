@@ -25,17 +25,17 @@ namespace SpectrumFees.ViewModels
             {
                 _busy = value;
                 NotifyPropertyChanged();
-                DoSimpleCalculationCommand.ChangeCanExecute();
+                ShowSimpleCalculationDescriptionCommand.ChangeCanExecute();
             }
         }
 
         public MainViewModel()
         {
-            DoSimpleCalculationCommand = new Command(DoSimpleCalculation, () => !Busy);
+            ShowSimpleCalculationDescriptionCommand = new Command(ShowSimpleCalculationDescription, () => !Busy);
         }
 
-        public Command DoSimpleCalculationCommand { get; }
-        private async void DoSimpleCalculation()
+        public Command ShowSimpleCalculationDescriptionCommand { get; }
+        private async void ShowSimpleCalculationDescription()
         {
             Busy = true;
             FreeResources();

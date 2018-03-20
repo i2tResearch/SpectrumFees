@@ -7,6 +7,7 @@ namespace SpectrumFees.Pages
         public SpectrumFeesPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

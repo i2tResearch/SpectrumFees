@@ -10,8 +10,8 @@
         <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
     </ContentPage.Padding>
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Button Text="Cálculo simple" Command="{Binding DoSimpleCalculationCommand}" />
+    <StackLayout VerticalOptions="Start" HorizontalOptions="End">
+        <Button Text="?" Command="{Binding ShowSimpleCalculationDescriptionCommand}" BackgroundColor="Transparent" />
     </StackLayout>
     
 </ContentPage>
