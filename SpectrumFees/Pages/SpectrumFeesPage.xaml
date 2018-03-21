@@ -10,16 +10,35 @@
         https://color.adobe.com/Financial-Literacy-color-theme-1278403/ 
         https://color.adobe.com/save-money-color-theme-10390596/
         https://color.adobe.com/Fresh-Water-color-theme-7088849/
+
+        Colores de Celgis y Simona
     -->
     
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" iOS="13, 25, 13, 13" />
     </ContentPage.Padding>
-    
-    <StackLayout VerticalOptions="Start" HorizontalOptions="Fill" BackgroundColor="{StaticResource greenColor}">
-        <StackLayout Orientation="Horizontal" HeightRequest="56">
-            <Label Text="250.000.000" IsEnabled="false" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" TextColor="#ffffff" />
-            <Button Text="?" Command="{Binding ShowSimpleCalculationDescriptionCommand}" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="CenterAndExpand" WidthRequest="48" TextColor="#ffffff" FontSize="Medium" FontAttributes="Bold" />
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+            <Button Text="S1" />
+            <Button Text="S2" />
+            <Button Text="S3" />
+            <Button Text="S4" />
+            <Button Text="S5" />
+        </StackLayout>
+
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Parámetro 1" />
+            <Entry Placeholder="%, MHz, etc..." />
+            <Label Text="Parámetro 2" />
+            <Entry Placeholder="%, MHz, etc..." />
+            <Label Text="Parámetro 3" />
+            <Entry Placeholder="%, MHz, etc..." />
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HeightRequest="56">
+            <Label Text="$250.000.000" IsEnabled="false" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+            <Button Text="Calcular" VerticalOptions="Center" />
         </StackLayout>
         
     </StackLayout>

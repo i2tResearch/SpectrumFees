@@ -11,10 +11,6 @@
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\SpectrumFeesPage.xaml" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\SimpleCalculationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -26,10 +22,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\InstanceLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BindableBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\SimpleCalculationPage.xaml.cs">
-      <DependentUpon>SimpleCalculationPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SimpleCalculationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

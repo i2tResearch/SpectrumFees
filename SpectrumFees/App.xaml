@@ -11,7 +11,7 @@
 
             <!-- Styles -->
             <Style TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="#ffffff" />
+                <Setter Property="BackgroundColor" Value="#fefefe" />
             </Style>
 
             <Style TargetType="Label">
@@ -21,11 +21,7 @@
             <!-- Locators -->   
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
 
-            <Color x:Key="blueColor">#5fbdf5</Color>
-            <Color x:Key="cyanColor">#c4eaff</Color>
-            <Color x:Key="whiteColor">#ffffff</Color>
-            <Color x:Key="navyColor">#000566</Color>
-            <Color x:Key="greenColor">#39b348</Color>
+            <Color x:Key="whiteColor">#fefefe</Color>
             
         </ResourceDictionary>
     </Application.Resources>
