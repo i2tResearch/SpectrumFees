@@ -135,6 +135,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\broadcasting.png" />
+    <AndroidResource Include="Resources\drawable\mwp2p.png" />
+    <AndroidResource Include="Resources\drawable\mobile.png" />
+    <AndroidResource Include="Resources\drawable\mvds.png" />
+    <AndroidResource Include="Resources\drawable\pmr.png" />
   </ItemGroup>
   <Import Project="..\SpectrumFees\SpectrumFees.projitems" Label="Shared" Condition="Exists('..\SpectrumFees\SpectrumFees.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
