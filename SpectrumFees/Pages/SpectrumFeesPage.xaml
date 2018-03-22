@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SpectrumFees"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
     xmlns:helpers="clr-namespace:SpectrumFees.Helpers"
     x:Class="SpectrumFees.Pages.SpectrumFeesPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
@@ -16,16 +17,42 @@
     -->
     
     <ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness" iOS="13, 25, 13, 13" />
+        <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
     </ContentPage.Padding>
+    
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
 
         <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
-            <Button Text="Mobile" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Mobile}}" />
-            <Button Text="MVDS" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MVDS}}" />
-            <Button Text="Broadcast" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Broadcast}}" />
-            <Button Text="MWP2P" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MWP2P}}" />
-            <Button Text="PMR" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.PMR}}" />
+            <controls:CircleImage Source="mobile.png" FillColor="{StaticResource GrayColor}">
+                <controls:CircleImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Mobile}}" />
+                </controls:CircleImage.GestureRecognizers>
+            </controls:CircleImage>
+
+            <controls:CircleImage Source="mvds.png" FillColor="{StaticResource OrangeColor}">
+                <controls:CircleImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MVDS}}" />
+                </controls:CircleImage.GestureRecognizers>
+            </controls:CircleImage>
+
+            <controls:CircleImage Source="broadcasting.png" FillColor="{StaticResource GrayColor}">
+                <controls:CircleImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Broadcast}}" />
+                </controls:CircleImage.GestureRecognizers>
+            </controls:CircleImage>
+
+            <controls:CircleImage Source="mwp2p.png" FillColor="{StaticResource GrayColor}">
+                <controls:CircleImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MWP2P}}" />
+                </controls:CircleImage.GestureRecognizers>
+            </controls:CircleImage>
+
+            <controls:CircleImage Source="pmr.png" FillColor="{StaticResource GrayColor}">
+                <controls:CircleImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.PMR}}" />
+                </controls:CircleImage.GestureRecognizers>
+            </controls:CircleImage>
+
         </StackLayout>
 
         <Label Text="{Binding SelectedService}" />
