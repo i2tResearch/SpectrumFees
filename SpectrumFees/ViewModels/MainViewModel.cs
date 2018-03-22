@@ -6,8 +6,8 @@ namespace SpectrumFees.ViewModels
 {
     public class MainViewModel : BindableBase
     {
-        private double _occupancy = 0;
-        public double Occupancy
+        private double? _occupancy;
+        public double? Occupancy
         {
             get => _occupancy;
             set
@@ -17,8 +17,8 @@ namespace SpectrumFees.ViewModels
             }
         }
 
-        private double _cellFactor = 0;
-        public double CellFactor
+        private double? _cellFactor;
+        public double? CellFactor
         {
             get => _cellFactor;
             set
@@ -28,8 +28,8 @@ namespace SpectrumFees.ViewModels
             }
         }
 
-        private double _powerFactor = 0;
-        public double PowerFactor
+        private double? _powerFactor;
+        public double? PowerFactor
         {
             get => _powerFactor;
             set
@@ -39,8 +39,8 @@ namespace SpectrumFees.ViewModels
             }
         }
 
-        private double _siteFactor = 0;
-        public double SiteFactor
+        private double? _siteFactor;
+        public double? SiteFactor
         {
             get => _siteFactor;
             set
@@ -50,8 +50,8 @@ namespace SpectrumFees.ViewModels
             }
         }
 
-        private double _weightFactor = 0;
-        public double WeightFactor
+        private double? _weightFactor;
+        public double? WeightFactor
         {
             get => _weightFactor;
             set
@@ -61,8 +61,8 @@ namespace SpectrumFees.ViewModels
             }
         }
 
-        private double _serviceFactor = 0;
-        public double ServiceFactor
+        private double? _serviceFactor;
+        public double? ServiceFactor
         {
             get => _serviceFactor;
             set
@@ -72,8 +72,8 @@ namespace SpectrumFees.ViewModels
             }
         }
 
-        private double _directionFactor = 0;
-        public double DirectionFactor
+        private double? _directionFactor;
+        public double? DirectionFactor
         {
             get => _directionFactor;
             set
@@ -102,20 +102,20 @@ namespace SpectrumFees.ViewModels
         public Command<string> SetServiceCommand { get; }
         private void SetService(string service)
         {
-            Occupancy = 0;
-            CellFactor = 0;
-            PowerFactor = 0;
-            SiteFactor = 0;
-            WeightFactor = 0;
-            ServiceFactor = 0;
-            DirectionFactor = 0;
+            Occupancy = null;
+            CellFactor = null;
+            PowerFactor = null;
+            SiteFactor = null;
+            WeightFactor = null;
+            ServiceFactor = null;
+            DirectionFactor = null;
 
             SelectedService = service;
         }
 
-        private double GetCongestionFactor() => 0.5 * Math.Exp(2.2 * Occupancy);
+        private double GetCongestionFactor() => 0.5 * Math.Exp(2.2 * Occupancy ?? 0);
 
-        private double GetKp(string service)
+        private double? GetKp(string service)
         {
             switch (service)
             {
@@ -134,10 +134,10 @@ namespace SpectrumFees.ViewModels
             }
         }
 
-        private double GetKpMobile() => CellFactor;
-        private double GetKpMVDS() => PowerFactor * SiteFactor;
-        private double GetKpBroadcast() => WeightFactor * PowerFactor;
-        private double GetKpMWP2P() => ServiceFactor * DirectionFactor;
+        private double? GetKpMobile() => CellFactor;
+        private double? GetKpMVDS() => PowerFactor * SiteFactor;
+        private double? GetKpBroadcast() => WeightFactor * PowerFactor;
+        private double? GetKpMWP2P() => ServiceFactor * DirectionFactor;
         private double GetKpPMR()
         {
             return 0;

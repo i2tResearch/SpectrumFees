@@ -24,7 +24,7 @@ namespace SpectrumFees.Converters
                 case Constants.PMR:
                     return "Radio Móvil Privada (PMR)";
                 default:
-                    return "";
+                    return null;
             }
         }
 

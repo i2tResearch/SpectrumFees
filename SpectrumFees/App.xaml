@@ -17,14 +17,22 @@
             </Style>
 
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Keyboard" Value="Numeric" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="WidthRequest" Value="150" />
             </Style>
 
             <Style TargetType="controls:CircleImage">
                 <Setter Property="Aspect" Value="AspectFill" />
                 <Setter Property="FillColor" Value="#848688" />
-                <Setter Property="HeightRequest" Value="32" />
-                <Setter Property="WidthRequest" Value="32" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="WidthRequest" Value="48" />
             </Style>
 
             <!-- Constants -->
@@ -32,12 +40,20 @@
             <Color x:Key="WhiteColor">#fefefe</Color>
             <Color x:Key="OrangeColor">#f3863f</Color>
             <Color x:Key="GrayColor">#848688</Color>
+            <x:String x:Key="Occupancy">Occupancy</x:String>
+            <x:String x:Key="CellFactor">CellFactor</x:String>
+            <x:String x:Key="PowerFactor">PowerFactor</x:String>
+            <x:String x:Key="SiteFactor">SiteFactor</x:String>
+            <x:String x:Key="WeightFactor">WeightFactor</x:String>
+            <x:String x:Key="ServiceFactor">ServiceFactor</x:String>
+            <x:String x:Key="DirectionFactor">DirectionFactor</x:String>
             
             <!-- Locators -->
             
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
             <converters:LogoBackgroundConverter x:Key="LogoBackgroundConverter"></converters:LogoBackgroundConverter>
             <converters:ServiceNameConverter x:Key="ServiceNameConverter"></converters:ServiceNameConverter>
+            <converters:ParametersVisibilityConverter x:Key="ParametersVisibilityConverter"></converters:ParametersVisibilityConverter>
             
         </ResourceDictionary>
     </Application.Resources>
