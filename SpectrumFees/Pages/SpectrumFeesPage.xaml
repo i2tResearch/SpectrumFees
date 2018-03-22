@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SpectrumFees"
+    xmlns:helpers="clr-namespace:SpectrumFees.Helpers"
     x:Class="SpectrumFees.Pages.SpectrumFeesPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
@@ -20,12 +21,14 @@
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
 
         <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
-            <Button Text="S1" />
-            <Button Text="S2" />
-            <Button Text="S3" />
-            <Button Text="S4" />
-            <Button Text="S5" />
+            <Button Text="Mobile" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Mobile}}" />
+            <Button Text="MVDS" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MVDS}}" />
+            <Button Text="Broadcast" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Broadcast}}" />
+            <Button Text="MWP2P" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MWP2P}}" />
+            <Button Text="PMR" Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.PMR}}" />
         </StackLayout>
+
+        <Label Text="{Binding SelectedService}" />
 
         <StackLayout VerticalOptions="CenterAndExpand">
             <Label Text="Parámetro 1" />
