@@ -141,7 +141,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable\broadcasting.png" />
+    <AndroidResource Include="Resources\drawable\broadcast.png" />
     <AndroidResource Include="Resources\drawable\mwp2p.png" />
     <AndroidResource Include="Resources\drawable\mobile.png" />
     <AndroidResource Include="Resources\drawable\mvds.png" />

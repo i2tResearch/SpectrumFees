@@ -102,13 +102,18 @@ namespace SpectrumFees.ViewModels
         public Command<string> SetServiceCommand { get; }
         private void SetService(string service)
         {
+            Occupancy = 0;
+            CellFactor = 0;
+            PowerFactor = 0;
+            SiteFactor = 0;
+            WeightFactor = 0;
+            ServiceFactor = 0;
+            DirectionFactor = 0;
+
             SelectedService = service;
         }
 
-        private double GetCongestionFactor()
-        {
-            return 0.5 * Math.Exp(2.2 * Occupancy);
-        }
+        private double GetCongestionFactor() => 0.5 * Math.Exp(2.2 * Occupancy);
 
         private double GetKp(string service)
         {

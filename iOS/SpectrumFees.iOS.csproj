@@ -121,7 +121,7 @@
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\broadcasting.png" />
+    <BundleResource Include="Resources\broadcast.png" />
     <BundleResource Include="Resources\mobile.png" />
     <BundleResource Include="Resources\mvds.png" />
     <BundleResource Include="Resources\mwp2p.png" />

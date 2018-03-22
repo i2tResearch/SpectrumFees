@@ -23,31 +23,31 @@
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
 
         <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
-            <controls:CircleImage Source="mobile.png" FillColor="{StaticResource GrayColor}">
+            <controls:CircleImage Source="mobile.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.Mobile}}">
                 <controls:CircleImage.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Mobile}}" />
                 </controls:CircleImage.GestureRecognizers>
             </controls:CircleImage>
 
-            <controls:CircleImage Source="mvds.png" FillColor="{StaticResource OrangeColor}">
+            <controls:CircleImage Source="mvds.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.MVDS}}">
                 <controls:CircleImage.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MVDS}}" />
                 </controls:CircleImage.GestureRecognizers>
             </controls:CircleImage>
 
-            <controls:CircleImage Source="broadcasting.png" FillColor="{StaticResource GrayColor}">
+            <controls:CircleImage Source="broadcast.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.Broadcast}}">
                 <controls:CircleImage.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Broadcast}}" />
                 </controls:CircleImage.GestureRecognizers>
             </controls:CircleImage>
 
-            <controls:CircleImage Source="mwp2p.png" FillColor="{StaticResource GrayColor}">
+            <controls:CircleImage Source="mwp2p.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.MWP2P}}">
                 <controls:CircleImage.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MWP2P}}" />
                 </controls:CircleImage.GestureRecognizers>
             </controls:CircleImage>
 
-            <controls:CircleImage Source="pmr.png" FillColor="{StaticResource GrayColor}">
+            <controls:CircleImage Source="pmr.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.PMR}}">
                 <controls:CircleImage.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.PMR}}" />
                 </controls:CircleImage.GestureRecognizers>
