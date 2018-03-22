@@ -37,6 +37,7 @@
             
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
             <converters:LogoBackgroundConverter x:Key="LogoBackgroundConverter"></converters:LogoBackgroundConverter>
+            <converters:ServiceNameConverter x:Key="ServiceNameConverter"></converters:ServiceNameConverter>
             
         </ResourceDictionary>
     </Application.Resources>

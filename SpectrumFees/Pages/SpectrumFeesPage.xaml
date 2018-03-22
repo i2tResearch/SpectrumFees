@@ -55,7 +55,7 @@
 
         </StackLayout>
 
-        <Label Text="{Binding SelectedService}" />
+        <Label Text="{Binding SelectedService, Converter={StaticResource ServiceNameConverter}}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
 
         <StackLayout VerticalOptions="CenterAndExpand">
             <Label Text="Parámetro 1" />
