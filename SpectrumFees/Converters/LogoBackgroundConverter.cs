@@ -8,9 +8,7 @@ namespace SpectrumFees.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var selected = (string)value;
-            var current = (string)parameter;
-            var color = selected == current ? "OrangeColor" : "GrayColor";
+            var color = value == parameter ? "OrangeColor" : "GrayColor";
             return Application.Current.Resources[color];
         }
 

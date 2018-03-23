@@ -40,6 +40,7 @@
             <Color x:Key="WhiteColor">#fefefe</Color>
             <Color x:Key="OrangeColor">#f3863f</Color>
             <Color x:Key="GrayColor">#848688</Color>
+            
             <x:String x:Key="Occupancy">Occupancy</x:String>
             <x:String x:Key="CellFactor">CellFactor</x:String>
             <x:String x:Key="PowerFactor">PowerFactor</x:String>
@@ -47,6 +48,13 @@
             <x:String x:Key="WeightFactor">WeightFactor</x:String>
             <x:String x:Key="ServiceFactor">ServiceFactor</x:String>
             <x:String x:Key="DirectionFactor">DirectionFactor</x:String>
+
+            <!-- Service names -->
+            <x:String x:Key="Mobile">Móvil</x:String>
+            <x:String x:Key="MVDS">MVDS</x:String>
+            <x:String x:Key="Broadcast">Radiodifusión (TV y radio FM)</x:String>
+            <x:String x:Key="MWP2P">Enlaces de Microondas (P2P)</x:String>
+            <x:String x:Key="PMR">Radio Móvil Privada (PMR)</x:String>
             
             <!-- Locators -->
             
