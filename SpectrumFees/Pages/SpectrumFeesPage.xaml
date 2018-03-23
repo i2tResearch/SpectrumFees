@@ -19,80 +19,86 @@
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" Android="13" iOS="13, 25, 13, 13" />
     </ContentPage.Padding>
-    
-    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
 
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
-            <controls:CircleImage Source="mobile.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.Mobile}}">
-                <controls:CircleImage.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Mobile}}" />
-                </controls:CircleImage.GestureRecognizers>
-            </controls:CircleImage>
+    <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
 
-            <controls:CircleImage Source="mvds.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.MVDS}}">
-                <controls:CircleImage.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MVDS}}" />
-                </controls:CircleImage.GestureRecognizers>
-            </controls:CircleImage>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                <controls:CircleImage Source="mobile.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.Mobile}}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Mobile}}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
 
-            <controls:CircleImage Source="broadcast.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.Broadcast}}">
-                <controls:CircleImage.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Broadcast}}" />
-                </controls:CircleImage.GestureRecognizers>
-            </controls:CircleImage>
+                <controls:CircleImage Source="mvds.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.MVDS}}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MVDS}}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
 
-            <controls:CircleImage Source="mwp2p.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.MWP2P}}">
-                <controls:CircleImage.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MWP2P}}" />
-                </controls:CircleImage.GestureRecognizers>
-            </controls:CircleImage>
+                <controls:CircleImage Source="broadcast.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.Broadcast}}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.Broadcast}}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
 
-            <controls:CircleImage Source="pmr.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.PMR}}">
-                <controls:CircleImage.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.PMR}}" />
-                </controls:CircleImage.GestureRecognizers>
-            </controls:CircleImage>
+                <controls:CircleImage Source="mwp2p.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.MWP2P}}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.MWP2P}}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
 
+                <controls:CircleImage Source="pmr.png" FillColor="{Binding SelectedService, Converter={StaticResource LogoBackgroundConverter}, ConverterParameter={x:Static helpers:Constants.PMR}}">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SetServiceCommand}" CommandParameter="{Binding Source={x:Static helpers:Constants.PMR}}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
+
+            </StackLayout>
+
+            <Label Text="{Binding SelectedService, Converter={StaticResource ServiceNameConverter}}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=Bandwidth}">
+                    <Label Text="Ancho de banda (MHz)" />
+                    <Entry Placeholder="0.0" Text="{Binding Bandwidth, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=Occupancy}">
+                    <Label Text="Ocupación (%)" />
+                    <Entry Placeholder="0-100" Text="{Binding Occupancy, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=CellFactor}">
+                    <Label Text="Factor de celda (Ftx)" />
+                    <Entry Placeholder="0.0" Text="{Binding CellFactor, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=PowerFactor}">
+                    <Label Text="Factor de potencia (Fp)" />
+                    <Entry Placeholder="0.0" Text="{Binding PowerFactor, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=SiteFactor}">
+                    <Label Text="Factor de sitio (Fsf)" />
+                    <Entry Placeholder="0.0" Text="{Binding SiteFactor, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=WeightFactor}">
+                    <Label Text="Factor de peso (Wf)" />
+                    <Entry Placeholder="0.0" Text="{Binding WeightFactor, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=ServiceFactor}">
+                    <Label Text="Factor de servicio (Fs)" />
+                    <Entry Placeholder="0.0" Text="{Binding ServiceFactor, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=DirectionFactor}">
+                    <Label Text="Factor de dirección (Fd)" />
+                    <Entry Placeholder="0.0" Text="{Binding DirectionFactor, Mode=TwoWay}" />
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HeightRequest="56">
+                <Label Text="{Binding Result}" IsEnabled="false" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                <Button Text="Calcular" Command="{Binding CalculateResultCommand}" VerticalOptions="Center" />
+            </StackLayout>
+            
         </StackLayout>
-
-        <Label Text="{Binding SelectedService, Converter={StaticResource ServiceNameConverter}}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
-
-        <StackLayout VerticalOptions="CenterAndExpand">
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=Occupancy}">
-                <Label Text="Ocupación (%)" />
-                <Entry Placeholder="0-100" Text="{Binding Occupancy}" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=CellFactor}">
-                <Label Text="Factor de celda (Ftx)" />
-                <Entry Placeholder="0.0" Text="{Binding CellFactor}" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=PowerFactor}">
-                <Label Text="Factor de potencia (Fp)" />
-                <Entry Placeholder="0.0" Text="{Binding PowerFactor}" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=SiteFactor}">
-                <Label Text="Factor de sitio (Fsf)" />
-                <Entry Placeholder="0.0" Text="{Binding SiteFactor}" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=WeightFactor}">
-                <Label Text="Factor de peso (Wf)" />
-                <Entry Placeholder="0.0" Text="{Binding WeightFactor}" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=ServiceFactor}">
-                <Label Text="Factor de servicio (Fs)" />
-                <Entry Placeholder="0.0" Text="{Binding ServiceFactor}" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=DirectionFactor}">
-                <Label Text="Factor de dirección (Fd)" />
-                <Entry Placeholder="0.0" Text="{Binding DirectionFactor}" />
-            </StackLayout>
-        </StackLayout>
-        
-        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HeightRequest="56">
-            <Label Text="$250.000.000" IsEnabled="false" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
-            <Button Text="Calcular" VerticalOptions="Center" />
-        </StackLayout>
-        
-    </StackLayout>
+    </ScrollView>
     
 </ContentPage>

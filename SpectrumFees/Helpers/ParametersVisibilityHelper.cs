@@ -5,10 +5,10 @@ namespace SpectrumFees.Helpers
 {
     public class ParametersVisibilityHelper
     {
-        private static string[] mobileParameters = new string[] { "Occupancy", "CellFactor" };
-        private static string[] mvdsParameters = new string[] { "Occupancy", "PowerFactor", "SiteFactor" };
-        private static string[] broadcastParameters = new string[] { "Occupancy", "PowerFactor", "WeightFactor" };
-        private static string[] mwp2pParameters = new string[] { "Occupancy", "ServiceFactor", "DirectionFactor" };
+        private static string[] mobileParameters = new string[] { "Bandwidth", "Occupancy", "CellFactor" };
+        private static string[] mvdsParameters = new string[] { "Bandwidth", "Occupancy", "PowerFactor", "SiteFactor" };
+        private static string[] broadcastParameters = new string[] { "Bandwidth", "Occupancy", "PowerFactor", "WeightFactor" };
+        private static string[] mwp2pParameters = new string[] { "Bandwidth", "Occupancy", "ServiceFactor", "DirectionFactor" };
         private static string[] pmrParameters = new string[] { };
 
         private static string[] GetCompareArray(string service)

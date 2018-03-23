@@ -6,6 +6,17 @@ namespace SpectrumFees.ViewModels
 {
     public class MainViewModel : BindableBase
     {
+        private double? _bandwidth;
+        public double? Bandwidth
+        {
+            get => _bandwidth;
+            set
+            {
+                _bandwidth = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         private double? _occupancy;
         public double? Occupancy
         {
@@ -94,14 +105,27 @@ namespace SpectrumFees.ViewModels
             }
         }
 
+        private double? _result;
+        public double? Result
+        {
+            get => _result;
+            set
+            {
+                _result = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public MainViewModel()
         {
             SetServiceCommand = new Command<string>(SetService);
+            CalculateResultCommand = new Command(CalculateResult);
         }
 
         public Command<string> SetServiceCommand { get; }
         private void SetService(string service)
         {
+            Bandwidth = null;
             Occupancy = null;
             CellFactor = null;
             PowerFactor = null;
@@ -109,11 +133,29 @@ namespace SpectrumFees.ViewModels
             WeightFactor = null;
             ServiceFactor = null;
             DirectionFactor = null;
+            Result = null;
 
             SelectedService = service;
         }
 
-        private double GetCongestionFactor() => 0.5 * Math.Exp(2.2 * Occupancy ?? 0);
+        public Command CalculateResultCommand { get; }
+        private void CalculateResult()
+        {
+            var cin = GetCongestionFactor();
+            var bw = Bandwidth ?? 0;
+            var kp = GetKp(SelectedService) ?? 0;
+            Result = cin * bw * kp;
+        }
+
+        private double GetCongestionFactor()
+        {
+            if (Occupancy != null)
+            {
+                return 0.5 * Math.Exp(2.2 * (double)Occupancy / 100);
+            }
+
+            return 0;
+        }
 
         private double? GetKp(string service)
         {
