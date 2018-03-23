@@ -58,31 +58,31 @@
         <Label Text="{Binding SelectedService, Converter={StaticResource ServiceNameConverter}}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
 
         <StackLayout VerticalOptions="CenterAndExpand">
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter={StaticResource Occupancy}}">
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=Occupancy}">
                 <Label Text="Ocupación (%)" />
                 <Entry Placeholder="0-100" Text="{Binding Occupancy}" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter={StaticResource CellFactor}}">
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=CellFactor}">
                 <Label Text="Factor de celda (Ftx)" />
                 <Entry Placeholder="0.0" Text="{Binding CellFactor}" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter={StaticResource PowerFactor}}">
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=PowerFactor}">
                 <Label Text="Factor de potencia (Fp)" />
                 <Entry Placeholder="0.0" Text="{Binding PowerFactor}" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter={StaticResource SiteFactor}}">
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=SiteFactor}">
                 <Label Text="Factor de sitio (Fsf)" />
                 <Entry Placeholder="0.0" Text="{Binding SiteFactor}" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter={StaticResource WeightFactor}}">
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=WeightFactor}">
                 <Label Text="Factor de peso (Wf)" />
                 <Entry Placeholder="0.0" Text="{Binding WeightFactor}" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter={StaticResource ServiceFactor}}">
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=ServiceFactor}">
                 <Label Text="Factor de servicio (Fs)" />
                 <Entry Placeholder="0.0" Text="{Binding ServiceFactor}" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter={StaticResource DirectionFactor}}">
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=DirectionFactor}">
                 <Label Text="Factor de dirección (Fd)" />
                 <Entry Placeholder="0.0" Text="{Binding DirectionFactor}" />
             </StackLayout>

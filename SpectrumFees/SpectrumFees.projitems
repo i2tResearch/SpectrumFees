@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\LogoBackgroundConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ServiceNameConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ParametersVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ParametersVisibilityHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
