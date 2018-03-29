@@ -91,6 +91,18 @@
                     <Label Text="Factor de dirección (Fd)" />
                     <Entry Placeholder="0.0" Text="{Binding DirectionFactor, Mode=TwoWay}" />
                 </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=FixedPowerFactor}">
+                    <Label Text="Factor de potencia (Fp) total de las estaciones fijas" />
+                    <Entry Placeholder="0.0" Text="{Binding FixedPowerFactor, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=MobilePowerFactor}">
+                    <Label Text="Factor de potencia (Fp) total de los terminales móviles" />
+                    <Entry Placeholder="0.0" Text="{Binding MobilePowerFactor, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=PortablePowerFactor}">
+                    <Label Text="Factor de potencia (Fp)total de los terminales portátiles" />
+                    <Entry Placeholder="0.0" Text="{Binding PortablePowerFactor, Mode=TwoWay}" />
+                </StackLayout>
             </StackLayout>
             
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HeightRequest="56">

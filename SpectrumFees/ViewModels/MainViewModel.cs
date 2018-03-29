@@ -94,6 +94,39 @@ namespace SpectrumFees.ViewModels
             }
         }
 
+        private double? _fixedPowerFactor;
+        public double? FixedPowerFactor
+        {
+            get => _fixedPowerFactor;
+            set
+            {
+                _fixedPowerFactor = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private double? _mobilePowerFactor;
+        public double? MobilePowerFactor
+        {
+            get => _mobilePowerFactor;
+            set
+            {
+                _mobilePowerFactor = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private double? _portablePowerFactor;
+        public double? PortablePowerFactor
+        {
+            get => _portablePowerFactor;
+            set
+            {
+                _portablePowerFactor = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         private string _selectedService;
         public string SelectedService
         {
@@ -133,6 +166,9 @@ namespace SpectrumFees.ViewModels
             WeightFactor = null;
             ServiceFactor = null;
             DirectionFactor = null;
+            FixedPowerFactor = null;
+            MobilePowerFactor = null;
+            PortablePowerFactor = null;
             Result = null;
 
             SelectedService = service;
@@ -180,9 +216,6 @@ namespace SpectrumFees.ViewModels
         private double? GetKpMVDS() => PowerFactor * SiteFactor;
         private double? GetKpBroadcast() => WeightFactor * PowerFactor;
         private double? GetKpMWP2P() => ServiceFactor * DirectionFactor;
-        private double GetKpPMR()
-        {
-            return 0;
-        }
+        private double? GetKpPMR() => FixedPowerFactor + MobilePowerFactor + PortablePowerFactor;
     }
 }
