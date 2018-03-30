@@ -61,47 +61,47 @@
             <StackLayout VerticalOptions="CenterAndExpand">
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=Bandwidth}">
                     <Label Text="Ancho de banda (MHz)" />
-                    <Entry Placeholder="0.0" Text="{Binding Bandwidth, Mode=TwoWay}" />
+                    <Entry Placeholder="0.0" Text="{Binding Bandwidth, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=Occupancy}">
                     <Label Text="Ocupación (%)" />
-                    <Entry Placeholder="0-100" Text="{Binding Occupancy, Mode=TwoWay}" />
+                    <Entry Placeholder="0-100" Text="{Binding Occupancy, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=CellFactor}">
                     <Label Text="Factor de celda (Ftx)" />
-                    <Entry Placeholder="0.0" Text="{Binding CellFactor, Mode=TwoWay}" />
+                    <Entry Placeholder="0.0" Text="{Binding CellFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=PowerFactor}">
                     <Label Text="Factor de potencia (Fp)" />
-                    <Entry Placeholder="0.0" Text="{Binding PowerFactor, Mode=TwoWay}" />
+                    <Entry Placeholder="0.0" Text="{Binding PowerFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=SiteFactor}">
                     <Label Text="Factor de sitio (Fsf)" />
-                    <Entry Placeholder="0.0" Text="{Binding SiteFactor, Mode=TwoWay}" />
+                    <Entry Placeholder="0.0" Text="{Binding SiteFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=WeightFactor}">
                     <Label Text="Factor de peso (Wf)" />
-                    <Entry Placeholder="0.0" Text="{Binding WeightFactor, Mode=TwoWay}" />
+                    <Entry Placeholder="0.0" Text="{Binding WeightFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=ServiceFactor}">
                     <Label Text="Factor de servicio (Fs)" />
-                    <Entry Placeholder="0.0" Text="{Binding ServiceFactor, Mode=TwoWay}" />
+                    <Entry Placeholder="0.0" Text="{Binding ServiceFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=DirectionFactor}">
                     <Label Text="Factor de dirección (Fd)" />
-                    <Entry Placeholder="0.0" Text="{Binding DirectionFactor, Mode=TwoWay}" />
+                    <Entry Placeholder="0.0" Text="{Binding DirectionFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=FixedPowerFactor}">
-                    <Label Text="Factor de potencia (Fp) total de las estaciones fijas" />
-                    <Entry Placeholder="0.0" Text="{Binding FixedPowerFactor, Mode=TwoWay}" />
+                    <Label Text="Factor de potencia (Fp) de estaciones fijas" />
+                    <Entry Placeholder="0.0" Text="{Binding FixedPowerFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=MobilePowerFactor}">
-                    <Label Text="Factor de potencia (Fp) total de los terminales móviles" />
-                    <Entry Placeholder="0.0" Text="{Binding MobilePowerFactor, Mode=TwoWay}" />
+                    <Label Text="Factor de potencia (Fp) de terminales móviles" />
+                    <Entry Placeholder="0.0" Text="{Binding MobilePowerFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" IsVisible="{Binding SelectedService, Converter={StaticResource ParametersVisibilityConverter}, ConverterParameter=PortablePowerFactor}">
-                    <Label Text="Factor de potencia (Fp)total de los terminales portátiles" />
-                    <Entry Placeholder="0.0" Text="{Binding PortablePowerFactor, Mode=TwoWay}" />
+                    <Label Text="Factor de potencia (Fp) de terminales portátiles" />
+                    <Entry Placeholder="0.0" Text="{Binding PortablePowerFactor, Mode=TwoWay, Converter={StaticResource StringToDoubleConverter}}" />
                 </StackLayout>
             </StackLayout>
             

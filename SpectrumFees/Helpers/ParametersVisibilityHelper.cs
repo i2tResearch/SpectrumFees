@@ -9,7 +9,7 @@ namespace SpectrumFees.Helpers
         private static string[] mvdsParameters = new string[] { "Bandwidth", "Occupancy", "PowerFactor", "SiteFactor" };
         private static string[] broadcastParameters = new string[] { "Bandwidth", "Occupancy", "PowerFactor", "WeightFactor" };
         private static string[] mwp2pParameters = new string[] { "Bandwidth", "Occupancy", "ServiceFactor", "DirectionFactor" };
-        private static string[] pmrParameters = new string[] { "Bandwidth", "FixedPowerFactor", "MobilePowerFactor", "PortablePowerFactor" };
+        private static string[] pmrParameters = new string[] { "Bandwidth", "Occupancy", "FixedPowerFactor", "MobilePowerFactor", "PortablePowerFactor" };
 
         private static string[] GetCompareArray(string service)
         {

@@ -55,6 +55,7 @@
             <converters:LogoBackgroundConverter x:Key="LogoBackgroundConverter"></converters:LogoBackgroundConverter>
             <converters:ServiceNameConverter x:Key="ServiceNameConverter"></converters:ServiceNameConverter>
             <converters:ParametersVisibilityConverter x:Key="ParametersVisibilityConverter"></converters:ParametersVisibilityConverter>
+            <converters:StringToDoubleConverter x:Key="StringToDoubleConverter"></converters:StringToDoubleConverter>
             
         </ResourceDictionary>
     </Application.Resources>

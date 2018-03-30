@@ -180,6 +180,7 @@ namespace SpectrumFees.ViewModels
             var cin = GetCongestionFactor();
             var bw = Bandwidth ?? 0;
             var kp = GetKp(SelectedService) ?? 0;
+
             Result = cin * bw * kp;
         }
 
@@ -187,7 +188,8 @@ namespace SpectrumFees.ViewModels
         {
             if (Occupancy != null)
             {
-                return 0.5 * Math.Exp(2.2 * (double)Occupancy / 100);
+                var cin = 0.5 * Math.Exp(2.2 * (double)Occupancy / 100);
+                return cin;
             }
 
             return 0;

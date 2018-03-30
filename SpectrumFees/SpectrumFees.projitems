@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ServiceNameConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ParametersVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ParametersVisibilityHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToDoubleConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
